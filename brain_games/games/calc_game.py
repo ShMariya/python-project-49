@@ -1,8 +1,12 @@
-from brain_games.engine import welcome_user, greet, rounds
+
 import random
 from random import randint
 
-def generate_question():#generate of a question to the user
+task = 'What is the result of the expression?'
+game = 'calc'
+
+def generate_question_calc():#generate of a question to the user
+    
     number1 = randint(1, 50)
     number2 = randint(1, 50)
     operators = ['+', '-', '*']
@@ -18,8 +22,8 @@ def generate_question():#generate of a question to the user
 
 
 
-def calc():
+# def calc():
     
-    task = 'What is the result of the expression?'
-    # question, correct_answer = generate_question()
-    rounds(greet(welcome_user()), task, generate_question())
+#     # task = 'What is the result of the expression?'
+#     # question, correct_answer = generate_question()
+#     rounds(greet(welcome_user()), task, generate_question_calc(), game)
