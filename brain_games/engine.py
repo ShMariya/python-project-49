@@ -41,12 +41,10 @@ Let's try again, {name}!")
 def calc():
     
     task = 'What is the result of the expression?'
-    # question, correct_answer = generate_question()
     rounds(greet(welcome_user()), task, brain_games.games.calc_game.generate_question_calc(), 'calc')
     
 
 def is_even():
     
     task = 'Answer "yes" if the number is even, otherwise answer "no".'
-    # question, correct_answer = generate_question()
     rounds(greet(welcome_user()), task, brain_games.games.even_game.generate_question_even(), 'even')
