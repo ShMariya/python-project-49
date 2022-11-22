@@ -3,6 +3,7 @@ import random
 from random import randint
 import brain_games.games.calc_game
 import brain_games.games.even_game
+import brain_games.games.gcd_game
 
 
 def welcome_user(): #узнаем имя игрока
@@ -22,9 +23,11 @@ def rounds(name, task, question_correct_answer, game):
             question_correct_answer = brain_games.games.calc_game.generate_question_calc()
         elif game == 'even':
             question_correct_answer = brain_games.games.even_game.generate_question_even()
+        elif game == 'find_gcd':
+            question_correct_answer = brain_games.games.gcd_game.generate_question_gcd()            
         question, correct_answer = question_correct_answer
         print(question)
-        answer = input()
+        answer = prompt.string('Your answer: ')
         if answer != correct_answer:
             print(f"'{answer}' is wrong answer ;(. \
 Correct answer was '{correct_answer}'. \
@@ -48,3 +51,9 @@ def is_even():
     
     task = 'Answer "yes" if the number is even, otherwise answer "no".'
     rounds(greet(welcome_user()), task, brain_games.games.even_game.generate_question_even(), 'even')
+
+def find_gcd():
+    
+    task = 'Find the greatest common divisor of given numbers.'
+    rounds(greet(welcome_user()), task, brain_games.games.gcd_game.generate_question_gcd(), 'find_gcd')
+
