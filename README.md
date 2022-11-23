@@ -5,7 +5,7 @@
 
 Демонстрация игры "brain-even": https://asciinema.org/a/vbbL90w6IoOTIw8JCU9Q21PQ7
 
-Демонстрация игры "brain-calc": https://asciinema.org/a/kwCACMb530PUk92DkEraCYO3J
+Демонстрация игры "brain-calc": https://asciinema.org/a/BHDCFH0RSIVtbwCRRHjCryjBz
 
 Демонстрация игры "brain-gcd": https://asciinema.org/a/GbeUclZViXZ7B7tquiWZS1Uxm
 
