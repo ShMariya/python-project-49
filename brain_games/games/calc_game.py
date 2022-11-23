@@ -20,10 +20,3 @@ def generate_question_calc():#generate of a question to the user
         correct_answer = str(number1 * number2)
     return question, correct_answer
 
-
-
-# def calc():
-    
-#     # task = 'What is the result of the expression?'
-#     # question, correct_answer = generate_question()
-#     rounds(greet(welcome_user()), task, generate_question_calc(), game)
