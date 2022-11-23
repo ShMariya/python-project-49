@@ -11,7 +11,7 @@ def generate_question_progress():  # generate of a question to the user
         i += 1
     correct_answer = random.choice(progression)
     progression[progression.index(correct_answer)] = '..'
-    question = ''
+    question = 'Question: '
     for i in progression:
         question += str(i) + ' '
     return question.strip(), str(correct_answer)

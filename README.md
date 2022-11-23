@@ -9,7 +9,7 @@
 
 Демонстрация игры "brain-gcd": https://asciinema.org/a/GbeUclZViXZ7B7tquiWZS1Uxm
 
-Демонстрация игры "brain-progression": https://asciinema.org/a/2yrTK7WAqHENIwuaPPXNYiMvH
+Демонстрация игры "brain-progression": https://asciinema.org/a/Y4HtRztccPjybDwDDPcj5hcE6
 
 Демонстрация игры "brain-prime": https://asciinema.org/a/QE1fTp4CCe2aFqRNLBjWaHkCy
 
