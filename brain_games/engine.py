@@ -4,14 +4,16 @@ from random import randint
 import brain_games.games.calc_game
 import brain_games.games.even_game
 import brain_games.games.gcd_game
+import brain_games.games.progression_game
 
 
-def welcome_user(): #узнаем имя игрока
+def welcome_user(): #приветствуем и узнаем имя игрока
+    print("Welcome to the Brain Games!")
     name = prompt.string('May I have your name? ')
     return name
 
 
-def greet(name): #приветствие игрока
+def greet(name): #здороваемся с игроком
     print(f'Hello, {name}!')
     return name
 
@@ -24,7 +26,9 @@ def rounds(name, task, question_correct_answer, game):
         elif game == 'even':
             question_correct_answer = brain_games.games.even_game.generate_question_even()
         elif game == 'find_gcd':
-            question_correct_answer = brain_games.games.gcd_game.generate_question_gcd()            
+            question_correct_answer = brain_games.games.gcd_game.generate_question_gcd()
+        elif game == 'progression':
+            question_correct_answer = brain_games.games.progression_game.generate_question_progress()             
         question, correct_answer = question_correct_answer
         print(question)
         answer = prompt.string('Your answer: ')
@@ -57,3 +61,7 @@ def find_gcd():
     task = 'Find the greatest common divisor of given numbers.'
     rounds(greet(welcome_user()), task, brain_games.games.gcd_game.generate_question_gcd(), 'find_gcd')
 
+def find_missing_number():
+    
+    task = 'What number is missing in the progression?'
+    rounds(greet(welcome_user()), task, brain_games.games.progression_game.generate_question_progress(), 'progression')
