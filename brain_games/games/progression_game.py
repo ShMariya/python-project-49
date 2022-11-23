@@ -1,9 +1,6 @@
-
 import random
 from random import randint
 
-task = 'What number is missing in the progression?'
-game = 'progression?'
 
 def generate_question_progress():#generate of a question to the user
     first_member = randint(1, 5)
