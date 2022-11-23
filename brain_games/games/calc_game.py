@@ -2,11 +2,8 @@
 import random
 from random import randint
 
-task = 'What is the result of the expression?'
-game = 'calc'
 
-def generate_question_calc():#generate of a question to the user
-    
+def generate_question_calc():  # generate of a question to the user
     number1 = randint(1, 50)
     number2 = randint(1, 50)
     operators = ['+', '-', '*']
@@ -19,4 +16,3 @@ def generate_question_calc():#generate of a question to the user
     elif operator == '*':
         correct_answer = str(number1 * number2)
     return question, correct_answer
-
