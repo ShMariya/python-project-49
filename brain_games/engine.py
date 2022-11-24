@@ -17,25 +17,29 @@ def greet(name):  # здороваемся с игроком
     return name
 
 
-def rounds(name, task, question_correct_answer, game):
+def rules_games(game):
+    if game == 'calc':
+        question, correct_answer = (brain_games.games.calc_game
+                                    .generate_question_calc())
+    elif game == 'even':
+        question, correct_answer = (brain_games.games.even_game
+                                    .generate_question_even())
+    elif game == 'find_gcd':
+        question, correct_answer = (brain_games.games.gcd_game
+                                    .generate_question_gcd())
+    elif game == 'progression':
+        question, correct_answer = (brain_games.games.progression_game
+                                    .generate_question_progress())
+    elif game == 'prime':
+        question, correct_answer = (brain_games.games.prime_game
+                                    .generate_question_prime())
+    return question, correct_answer
+
+
+def rounds(name, task, game):
     print(task)
     for i in range(3):
-        if game == 'calc':
-            question_correct_answer = (brain_games.games.calc_game
-                                       .generate_question_calc())
-        elif game == 'even':
-            question_correct_answer = (brain_games.games.even_game
-                                       .generate_question_even())
-        elif game == 'find_gcd':
-            question_correct_answer = (brain_games.games.gcd_game
-                                       .generate_question_gcd())
-        elif game == 'progression':
-            question_correct_answer = (brain_games.games.progression_game
-                                       .generate_question_progress())
-        elif game == 'prime':
-            question_correct_answer = (brain_games.games.prime_game
-                                       .generate_question_prime())
-        question, correct_answer = question_correct_answer
+        question, correct_answer = rules_games(game)
         print(question)
         answer = prompt.string('Your answer: ')
         if answer != correct_answer:
@@ -53,34 +57,24 @@ Let's try again, {name}!")
 
 def calc():
     task = 'What is the result of the expression?'
-    rounds(greet(welcome_user()), task,
-           brain_games.games.calc_game.generate_question_calc(),
-           'calc')
+    rounds(greet(welcome_user()), task, 'calc')
 
 
 def is_even():
     task = 'Answer "yes" if the number is even, otherwise answer "no".'
-    rounds(greet(welcome_user()), task,
-           brain_games.games.even_game.generate_question_even(),
-           'even')
+    rounds(greet(welcome_user()), task, 'even')
 
 
 def find_gcd():
     task = 'Find the greatest common divisor of given numbers.'
-    rounds(greet(welcome_user()), task,
-           brain_games.games.gcd_game.generate_question_gcd(),
-           'find_gcd')
+    rounds(greet(welcome_user()), task, 'find_gcd')
 
 
 def find_missing_number():
     task = 'What number is missing in the progression?'
-    rounds(greet(welcome_user()), task,
-           brain_games.games.progression_game.generate_question_progress(),
-           'progression')
+    rounds(greet(welcome_user()), task, 'progression')
 
 
 def is_prime():
     task = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-    rounds(greet(welcome_user()), task,
-           brain_games.games.prime_game.generate_question_prime(),
-           'prime')
+    rounds(greet(welcome_user()), task, 'prime')
