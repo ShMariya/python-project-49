@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-from brain_games.engine import find_gcd
+from brain_games.engine import star_game
+import brain_games.games.gcd_game
 
 
 def main():
-    find_gcd()
+    star_game(brain_games.games.gcd_game)
 
 
 if __name__ == '__main__':
