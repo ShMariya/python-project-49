@@ -1,10 +1,16 @@
 import prompt
 
 
-def star_game(game):
+def greet(game):
     print('Welcome to the Brain Games!\nMay I have your name?', end=' ')
     name = input()
-    print(f'Hello, {name}!\n{game.task}')
+    print(f'Hello, {name}!')
+    print(game.task)
+    return name
+
+
+def start_game(game):
+    name = greet(game)
     for i in range(3):
         question, correct_answer = game.generate_question()
         print(question)
