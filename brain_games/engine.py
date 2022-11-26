@@ -2,10 +2,9 @@ import prompt
 
 
 def star_game(game):
-    print("Welcome to the Brain Games!")
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    print(game.task)
+    print('Welcome to the Brain Games!\nMay I have your name?', end=' ')
+    name = input()
+    print(f'Hello, {name}!\n{game.task}')
     for i in range(3):
         question, correct_answer = game.generate_question()
         print(question)
