@@ -1,45 +1,13 @@
 import prompt
-import brain_games.games.calc_game
-import brain_games.games.even_game
-import brain_games.games.gcd_game
-import brain_games.games.progression_game
-import brain_games.games.prime_game
 
 
-def welcome_user():  # приветствуем и узнаем имя игрока
+def star_game(game):
     print("Welcome to the Brain Games!")
     name = prompt.string('May I have your name? ')
-    return name
-
-
-def greet(name):  # здороваемся с игроком
     print(f'Hello, {name}!')
-    return name
-
-
-def rules_games(game):
-    if game == 'calc':
-        question, correct_answer = (brain_games.games.calc_game
-                                    .generate_question_calc())
-    elif game == 'even':
-        question, correct_answer = (brain_games.games.even_game
-                                    .generate_question_even())
-    elif game == 'find_gcd':
-        question, correct_answer = (brain_games.games.gcd_game
-                                    .generate_question_gcd())
-    elif game == 'progression':
-        question, correct_answer = (brain_games.games.progression_game
-                                    .generate_question_progress())
-    elif game == 'prime':
-        question, correct_answer = (brain_games.games.prime_game
-                                    .generate_question_prime())
-    return question, correct_answer
-
-
-def rounds(name, task, game):
-    print(task)
+    print(game.task)
     for i in range(3):
-        question, correct_answer = rules_games(game)
+        question, correct_answer = game.generate_question()
         print(question)
         answer = prompt.string('Your answer: ')
         if answer != correct_answer:
@@ -53,28 +21,3 @@ Let's try again, {name}!")
             i += 1
         if i == 3:
             print(f'Congratulations, {name}!')
-
-
-def calc():
-    task = 'What is the result of the expression?'
-    rounds(greet(welcome_user()), task, 'calc')
-
-
-def is_even():
-    task = 'Answer "yes" if the number is even, otherwise answer "no".'
-    rounds(greet(welcome_user()), task, 'even')
-
-
-def find_gcd():
-    task = 'Find the greatest common divisor of given numbers.'
-    rounds(greet(welcome_user()), task, 'find_gcd')
-
-
-def find_missing_number():
-    task = 'What number is missing in the progression?'
-    rounds(greet(welcome_user()), task, 'progression')
-
-
-def is_prime():
-    task = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-    rounds(greet(welcome_user()), task, 'prime')
