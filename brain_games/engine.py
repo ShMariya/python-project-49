@@ -17,5 +17,4 @@ def start_game(game):
         else:
             print('Correct!')
             i += 1
-        if i == 3:
-            print(f'Congratulations, {name}!')
+    print(f'Congratulations, {name}!')
