@@ -2,10 +2,10 @@ import random
 from random import randint
 
 
-task = 'What number is missing in the progression?'
+TASK = 'What number is missing in the progression?'
 
 
-def generate_progression():
+def get_progression():
     first_member = randint(1, 5)
     step = randint(1, 5)
     progression = [first_member]
@@ -15,8 +15,8 @@ def generate_progression():
     return progression
 
 
-def generate_question():  # generate of a question to the user
-    progression = generate_progression()
+def get_question_correct_answer():  # generate of a question to the user
+    progression = get_progression()
     correct_answer = random.choice(progression)
     progression[progression.index(correct_answer)] = '..'
     question = 'Question: '
